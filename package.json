@@ -1,0 +1,32 @@
+{
+  "name": "spauna",
+  "version": "1.0.0",
+  "description": "Centralized microfrontend project configuration",
+  "type": "module",
+  "exports": {
+    ".": "./lib/spauna.js"
+  },
+  "bin": {
+    "spauna": "./bin/spauna-cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "cli": "node --import ./register-hooks.js src/spauna-cli.ts"
+  },
+  "keywords": [
+    "single-spa",
+    "microfrontend",
+    "configuration"
+  ],
+  "author": "Joel Denning",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.14.2",
+    "@types/yargs": "^17.0.32",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
