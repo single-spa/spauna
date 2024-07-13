@@ -1,3 +1,3 @@
-import module from 'node:module';
+import module from "node:module";
 
-module.register('ts-node/esm', import.meta.url);
+module.register("ts-node/esm", import.meta.url);

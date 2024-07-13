@@ -11,7 +11,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "cli": "node --import ./register-hooks.js src/spauna-cli.ts"
+    "cli": "node --import ./register-hooks.js src/spauna-cli.ts",
+    "format": "pnpm exec prettier --write .",
+    "prepare": "husky"
   },
   "keywords": [
     "single-spa",
@@ -26,6 +28,9 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "husky": "^9.0.11",
+    "prettier": "^3.3.3",
+    "pretty-quick": "^4.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
