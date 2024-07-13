@@ -1,0 +1,10 @@
+{
+  "include": ["src/spauna.ts", "src/spauna-cli.ts"],
+  "compilerOptions": {
+    "lib": ["es2020"],
+    "declaration": true,
+    "outDir": "lib",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
+  }
+}
