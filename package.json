@@ -15,6 +15,7 @@
     "test": "jest --passWithNoTests",
     "cli": "node --import ./register-hooks.js src/spauna-cli.ts",
     "format": "pnpm exec prettier --write .",
+    "check-format": "pnpm exec prettier --check .",
     "prepare": "husky"
   },
   "keywords": [
