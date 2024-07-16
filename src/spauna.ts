@@ -44,13 +44,7 @@ async function fetchConfig(
     configLocation.startsWith("../") ||
     configLocation.startsWith("file://")
   ) {
-    let fileUrl: URL;
-
-    if (configLocation.startsWith("file://")) {
-      fileUrl = new URL(configLocation);
-    } else {
-      fileUrl = new URL(configLocation, parentUrl);
-    }
+    const fileUrl = new URL(configLocation, parentUrl);
 
     extendParent = fileUrl;
 
@@ -59,7 +53,7 @@ async function fetchConfig(
     config = JSON.parse(fileContents);
   } else {
     throw Error(
-      `spauna config location must start with with one of the following prefixes: ["https://", "http://", "./", "../", "file://"]`,
+      `spauna config location must start with with one of the following prefixes: ["https://", "http://", "./", "../", "file://"], but found ${configLocation} referenced in ${parentUrl}`,
     );
   }
 
