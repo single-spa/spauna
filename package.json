@@ -27,6 +27,9 @@
   "license": "MIT",
   "dependencies": {
     "@types/yargs": "^17.0.32",
+    "webpack": "^5.93.0",
+    "webpack-config-single-spa-react": "^4.0.5",
+    "webpack-dev-server": "^5.0.4",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
