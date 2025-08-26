@@ -1,8 +1,9 @@
 // See https://stackoverflow.com/a/74112582
 /// <reference lib="dom" />
 import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { serveCommand } from "./commands/serve.js";
+import { SpaunaConfig, defaultSpaunaConfig } from "./spauna-config.js";
 
 export async function runCommand(
   commandName: string,
@@ -15,13 +16,16 @@ export async function runCommand(
     pathToFileURL(process.cwd() + "/"),
   );
 
-  console.log(config);
-  // Step 2: Find Command
-  // Step 3: Execute Command
-}
+  // Step 2: Apply defaults to config
+  const finalConfig = { ...defaultSpaunaConfig, ...config };
 
-interface SpaunaConfig {
-  extends?: string;
+  // Step 3: Run Command
+  switch (commandName) {
+    case "serve":
+      await serveCommand(finalConfig);
+    default:
+      throw Error(`spauna: no such command '${commandName}'`);
+  }
 }
 
 async function fetchConfig(
